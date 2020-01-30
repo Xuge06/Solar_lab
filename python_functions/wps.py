@@ -1,15 +1,14 @@
+import uuid
+import os
+import pandas
+from datetime import datetime,timedelta
+from urllib.request import urlopen
+
 def wps_SG2(location, date_begin, date_end, dt):
     # location: geopoint [lat lon elev]
     # date_begin: datetime
     # date_end: datetime
     # dt: time step (hour)
-
-    import uuid
-    import os
-    import pandas
-    from datetime import datetime
-    from datetime import timedelta
-    from urllib.request import urlopen
 
     if (len(location) == 2):
         location[3] = -999;
@@ -36,13 +35,6 @@ def wps_CAMS_RAD(location, date_begin, date_end, dt, email):
     # dt: time step (hour)
     # email: username(email) in soda-pro.com (string)
 
-    import uuid
-    import os
-    import pandas
-    from datetime import datetime
-    from datetime import timedelta
-    from urllib.request import urlopen
-
     dt60_to_duration = {1: "PT01M", 15: "PT15M", 60: "PT01H", 1440: "P01D"}
 
     if (len(location) == 2):
@@ -65,11 +57,6 @@ def wps_CAMS_RAD(location, date_begin, date_end, dt, email):
     
 def wps_Horizon_SRTM(location):
     # location: geopoint [lat lon elev]
-
-    import uuid
-    import os
-    import pandas
-    from urllib.request import urlopen
 
     if (len(location) == 2):
         location[3] = -999;
